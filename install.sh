@@ -12,21 +12,17 @@ sudo -S apt-get update < ~/iambatman.txt;
 
 sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs;
 
-cd ~;
+cd
 sudo -S apt-get update < ~/iambatman.txt;
 
-mkdir ~/.rbenv
-cd ~/.rbenv && git clone https://github.com/rbenv/rbenv.git
-cd ~
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv;
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc;
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc;
-exec $SHELL
+exec $SHELL;
 
-mkdir ~/.rbenv/plugins/ruby-build
-cd ~/.rbenv/plugins/ruby-build && git clone https://github.com/rbenv/ruby-build.git
-cd ~
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build;
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc;
-exec $SHELL
+exec $SHELL;
 
 rbenv install 2.3.1;
 sudo -S apt-get update < ~/iambatman.txt;
