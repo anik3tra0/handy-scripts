@@ -15,20 +15,16 @@ sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libr
 cd ~;
 sudo -S apt-get update < ~/iambatman.txt;
 
-gclonerbenv() {
-  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-}
-
-gclonerbuild() {
-	git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-}
-
-gclonerbenv
+mkdir ~/.rbenv
+cd ~/.rbenv && git clone https://github.com/rbenv/rbenv.git
+cd ~
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc;
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc;
 exec $SHELL
 
-gclonerbuild
+mkdir ~/.rbenv/plugins/ruby-build
+cd ~/.rbenv/plugins/ruby-build && git clone https://github.com/rbenv/ruby-build.git
+cd ~
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc;
 exec $SHELL
 
